@@ -21,27 +21,37 @@
             <div class="col d-flex flex-column align-items-center">
                 <h2 id="cityName" class="mb-3">City Name</h2>
 
+                <!--This is a Bootstrap card, where we're displaying all of our weather data-->
                 <div class="card shadow-lg" style="width: 18rem;">
+                <!--Within our card, we're showing a simple image that denotes weather conditions for the day-->
                     <img id="conditionImage" src="https://openweathermap.org/img/wn/01d@2x.png" class="card-img-top align-self-center w-75" alt="conditions image">
 
+                    <!--Here, we have a Bootstrap List Group within our Card-->
+                    <!--This list group is simply a more elegant looking unordered list, to showcase weather metrics-->
                     <ul class="list-group list-group-flush">
+                        <!--Each list item showcases a different piece of weather information-->
                         <li id="conditionText" class="list-group-item">Condition Text</li>
                         <li id="temperature" class="list-group-item">Temperature</li>
+
                         <li class="list-group-item">
                             <div class="row">
                                 <div id="tempMax" class="col">
                                     High: 60&deg;F
                                 </div>
+
                                 <div id="tempMin" class="col">
                                     Low: 0&deg;F
                                 </div>
+                            </div>
                         </li>
+
                         <li id="perspectiveTemp" class="list-group-item">Feels Like</li>
                         <li id="windSpeed" class="list-group-item">Wind Speed</li>
                         <li id="pressure" class="list-group-item">Pressure</li>
                         <li id="humidityPercentage" class="list-group-item">Humidity</li>
                     </ul>
 
+                    <!--We include a time stamp so that our users know when they last fetched the weather data-->
                     <div id="timestamp" class="card-footer text-muted">
                         Fetched Data at 00:00
                     </div>
@@ -55,14 +65,20 @@
             </div>
 
             <div class="col">
+            <!--Last & Most important, we have a simple form input for users to enter their zip code-->
                 <form id="zipForm" class="d-flex flex-row justify-content-center">
+                <!--Here we use a variety of Bootstrap utility classes to make our form input both pretty and responsive-->
                     <div class="form-floating my-3 d-flex flex-row">
+                        <!--The input is where the data is actually added-->
                         <input class="form-control shadow-lg" id="zipInput" placeholder="10001">
+                        <!--We use a label here for ease of access to users-->
                         <label for="zipInput">ZIP Code</label>
+                        <!--Finally, we give the option to users to either submit using a button or by pressing enter-->
                         <button type="submit" class="btn btn-light mx-4 shadow-lg">Submit</button>
                     </div>
                 </form>
             </div>
+
         </div>
     </body>
 </html>
