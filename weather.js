@@ -32,7 +32,7 @@ const timeStamp = document.querySelector("#timestamp");
     This function and all the others are using the ES6 arrow function syntax.
 */
 
-const getTime = () => {
+function getTime() {
     // Get the current date and time from the Date object
     const date = new Date;
 
@@ -71,7 +71,7 @@ const getTime = () => {
     The endpoint is the URL that we are requesting the data from.
     We also have a URL Search Parameters object that will hold the parameters that we will pass to the endpoint.
 */
-const getWeatherData = async (zip = 10001) => {
+async function getWeatherData(zip = 10001) {
     // URL we are fetching data from. This URL pertains to the current weather data API endpoint from OpenWeatherMap
     const endpoint = "https://api.openweathermap.org/data/2.5/weather?";
 
@@ -102,7 +102,7 @@ const getWeatherData = async (zip = 10001) => {
 
     // Here, we're combining the response data and the timestamp into a single data object, for easy access.
     // We're also printing, or logging it to the console
-    const data = {...response, timestamp};
+    const data = {...response, timestamp}; // Spread Operator
     console.log(data);
 
     // Here, we are returning the data object we made
@@ -113,7 +113,7 @@ const getWeatherData = async (zip = 10001) => {
     The getWeatherData function is a function that takes care of getting and displaying the weather data.
     It makes use of the getWeatherData function that we made earlier.
 */
-const displayWeatherData = async (zip) => {
+async function displayWeatherData(zip) {
     // Here, we are awaiting the data from the getWeatherData function.
     // We are passing in the zip code that we got from the input element.
     const weatherData = await getWeatherData(zip);
@@ -156,12 +156,12 @@ const displayWeatherData = async (zip) => {
 }
 
 // Here, we are telling the browser to display weather data for a preset zip code when the page loads.
-window.onload = async () => {
+window.onload = async function () {
     await displayWeatherData();
 }
 
 // Here, we are telling the browser to display weather data for the zip code that the user inputs when the form is submitted.
-form.onsubmit = async (event) => {
+form.onsubmit = async function(event) {
     // Here, we are preventing the default behavior of the form, which is to refresh the page.
     // This is so that when we get our weather data, the browser doesn't automatically reload the page.
     event.preventDefault();
